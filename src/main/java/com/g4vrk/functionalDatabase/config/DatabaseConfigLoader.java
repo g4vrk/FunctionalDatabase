@@ -1,6 +1,6 @@
-package com.g4vrk.functionalLib.database.config;
+package com.g4vrk.functionalDatabase.config;
 
-import com.g4vrk.functionalLib.database.DatabaseType;
+import com.g4vrk.functionalDatabase.DatabaseType;
 import org.bukkit.configuration.ConfigurationSection;
 
 import java.io.File;

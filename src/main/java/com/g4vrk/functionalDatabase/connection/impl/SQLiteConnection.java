@@ -1,7 +1,6 @@
-package com.g4vrk.functionalLib.database.connection.impl;
+package com.g4vrk.functionalDatabase.connection.impl;
 
-import com.g4vrk.functionalLib.FunctionalLibAPI;
-import com.g4vrk.functionalLib.database.connection.DatabaseConnection;
+import com.g4vrk.functionalDatabase.connection.DatabaseConnection;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
@@ -16,14 +15,15 @@ public class SQLiteConnection implements DatabaseConnection {
     private final String poolName;
 
     public SQLiteConnection(String poolName, File baseFile) {
+        this(poolName, baseFile, new HikariConfig());
+    }
+
+    public SQLiteConnection(String poolName, File baseFile, HikariConfig config) {
         this.poolName = poolName;
         String url = "jdbc:sqlite:" + baseFile.getAbsolutePath();
 
-        HikariConfig config = new HikariConfig();
         config.setJdbcUrl(url);
         config.setPoolName(poolName);
-        config.setMaximumPoolSize(5);
-        config.setConnectionTestQuery("SELECT 1");
 
         this.source = new HikariDataSource(config);
     }
@@ -33,7 +33,8 @@ public class SQLiteConnection implements DatabaseConnection {
         try {
             return Optional.of(source.getConnection());
         } catch (SQLException e) {
-            FunctionalLibAPI.getAPI().orElseThrow(NullPointerException::new).getLogger().error("Не удалось подключиться к базе данных", e);
+            //noinspection CallToPrintStackTrace
+            e.printStackTrace();
         }
 
         return Optional.empty();

@@ -1,7 +1,7 @@
-package com.g4vrk.functionalLib.database;
+package com.g4vrk.functionalDatabase;
 
-import com.g4vrk.functionalLib.database.connection.DatabaseConnection;
-import com.g4vrk.functionalLib.database.factory.DatabaseConnectionFactory;
+import com.g4vrk.functionalDatabase.connection.DatabaseConnection;
+import com.g4vrk.functionalDatabase.factory.DatabaseConnectionFactory;
 import org.jetbrains.annotations.Nullable;
 
 import java.sql.Connection;

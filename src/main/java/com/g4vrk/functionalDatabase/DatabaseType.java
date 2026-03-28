@@ -1,4 +1,4 @@
-package com.g4vrk.functionalLib.database;
+package com.g4vrk.functionalDatabase;
 
 public enum DatabaseType {
     SQLITE,

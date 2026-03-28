@@ -1,4 +1,4 @@
-package com.g4vrk.functionalLib.database.connection;
+package com.g4vrk.functionalDatabase.connection;
 
 import java.sql.Connection;
 import java.util.Optional;

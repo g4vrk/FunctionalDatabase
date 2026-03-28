@@ -1,7 +1,7 @@
-package com.g4vrk.functionalLib.database.factory;
+package com.g4vrk.functionalDatabase.factory;
 
-import com.g4vrk.functionalLib.database.DatabaseType;
-import com.g4vrk.functionalLib.database.connection.DatabaseConnection;
+import com.g4vrk.functionalDatabase.DatabaseType;
+import com.g4vrk.functionalDatabase.connection.DatabaseConnection;
 
 public interface DatabaseConnectionFactory {
     DatabaseType getType();

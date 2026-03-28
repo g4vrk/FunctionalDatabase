@@ -1,7 +1,6 @@
-package com.g4vrk.functionalLib.database.connection.impl;
+package com.g4vrk.functionalDatabase.connection.impl;
 
-import com.g4vrk.functionalLib.FunctionalLibAPI;
-import com.g4vrk.functionalLib.database.connection.DatabaseConnection;
+import com.g4vrk.functionalDatabase.connection.DatabaseConnection;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
@@ -38,7 +37,8 @@ public class MySQLConnection implements DatabaseConnection {
         try {
             return Optional.of(source.getConnection());
         } catch (SQLException e) {
-            FunctionalLibAPI.getAPI().orElseThrow(NullPointerException::new).getLogger().error("Не удалось подключиться к базе данных", e);
+            //noinspection CallToPrintStackTrace
+            e.printStackTrace();
         }
 
         return Optional.empty();

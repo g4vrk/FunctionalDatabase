@@ -1,6 +1,6 @@
-package com.g4vrk.functionalLib.database.config;
+package com.g4vrk.functionalDatabase.config;
 
-import com.g4vrk.functionalLib.database.DatabaseType;
+import com.g4vrk.functionalDatabase.DatabaseType;
 
 import java.io.File;
 
@@ -12,6 +12,5 @@ public record DatabaseConfig(
         String user,
         String password,
         File sqliteFile
-) {
-}
+) {}
 
